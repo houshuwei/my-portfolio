@@ -147,7 +147,7 @@
 <body>
 <div class="container">
     <!-- 1) Home / Headline -->
-    <h1>Shuwei Hou</h1>
+    <h1>HOU Shuwei</h1>
     <div class="tagline">🔍 Seeking Commercial LLM Algorithm Engineer | PhD Candidate in Data Science</div>
     <div class="tags">
         <span class="tag">📊 Data Science</span>
@@ -159,7 +159,7 @@
 
     <!-- 2) About Me -->
     <h2>📌 About Me</h2>
-    <p>I am Shuwei Hou, a PhD candidate in Data Science at Lingnan University (expected Sep 2028). My journey spans agricultural economics (BSc) and economics (MSc), and I am now passionate about bridging business problems with large language models. I focus on algorithm improvement and efficient deployment of commercial LLMs. I thrive in cross-disciplinary teams and enjoy turning complex research into practical solutions.</p>
+    <p>I am HOU Shuwei, a PhD candidate in Data Science at Lingnan University (expected Sep 2028). My journey spans agricultural economics (BSc) and economics (MSc), and I am now passionate about bridging business problems with large language models. I focus on algorithm improvement and efficient deployment of commercial LLMs. I thrive in cross-disciplinary teams and enjoy turning complex research into practical solutions.</p>
     <ul style="margin-left: 25px; margin-bottom: 20px;">
         <li>🎓 <strong>Education</strong>:
             <ul>
@@ -198,30 +198,30 @@
     <!-- 4) Projects (Portfolio) – at least two -->
     <h2>📁 Projects</h2>
 
-    <!-- Project 1: Individual (LLM fine-tuning for finance) -->
+    <!-- Project 1: Individual – Grid World Treasure Hunt (Q-learning) -->
     <div class="project-card">
-        <div class="project-title">📈 Fine-tuning LLM for Financial Sentiment Analysis</div>
-        <div class="project-date">Sep 2026 – May 2027 | Individual Project</div>
-        <div class="project-section"><strong>📌 Problem:</strong> Financial firms need real-time sentiment signals from earnings calls and news, but general LLMs lack domain-specific accuracy.</div>
-        <div class="project-section"><strong>📁 Data:</strong> 50k annotated financial news headlines + 10k earnings call transcripts (public datasets: FiQA, FPBs).</div>
-        <div class="project-section"><strong>⚙️ Approach:</strong> LoRA fine-tuning of Llama 2-7B on A100 GPU; optimized prompt templates and applied 4-bit quantization for inference.</div>
-        <div class="project-section"><strong>📈 Outcome:</strong> Achieved 86% F1-score (vs 72% base model) and reduced inference latency by 40% via quantization; deployed a demo API.</div>
-        <div class="project-section"><strong>🙋 Contribution:</strong> Sole researcher – data preprocessing, fine-tuning pipeline, evaluation, and API deployment.</div>
-        <div><a href="#" class="btn">🔗 Code (GitHub)</a> <a href="#" class="btn">📄 Report</a></div>
+        <div class="project-title">🎮 Grid World Treasure Hunt with Q-learning</div>
+        <div class="project-date">Sep 2025 – Dec 2025 | Individual Project</div>
+        <div class="project-section"><strong>📌 Problem:</strong> An agent must navigate an 8×8 grid to collect all treasures while avoiding traps, learning optimal behavior via trial and error.</div>
+        <div class="project-section"><strong>📁 Data:</strong> Synthetic grid environment (8×8, 4 treasures, multiple traps). State = position + treasure bitmask (1024 states). Actions: up/down/left/right.</div>
+        <div class="project-section"><strong>⚙️ Approach:</strong> Tabular Q-learning with ε-greedy exploration (ε decays from 1.0 to 0.01). Reward: +10 per new treasure, -5 for trap, -0.1 per step. Trained for 2500 episodes.</div>
+        <div class="project-section"><strong>📈 Outcome:</strong> Agent collects all 4 treasures in ~35 steps (near-optimal). Average reward stabilizes around 34 (max possible ~40). Learned policy avoids all traps.</div>
+        <div class="project-section"><strong>🙋 Contribution:</strong> Full implementation in Python (NumPy, Matplotlib), designed state encoding, reward function, training loop, and real-time visualization.</div>
+        <div><a href="https://github.com/houshuwei/GridWorld-Qlearning.git" class="btn" target="_blank">🔗 GitHub Repo</a> <a href="https://youtu.be/7CExXgGWsAg" class="btn" target="_blank">📺 Demo Video</a></div>
     </div>
 
-    <!-- Project 2: Group (Algorithm efficiency improvement) -->
+    <!-- Project 2: Group – Credit Card Fraud Detection -->
     <div class="project-card">
-        <div class="project-title">⚡ Efficient LLM Inference for Customer Service Bots</div>
-        <div class="project-date">Feb 2027 – Dec 2027 | Group Project (3 members)</div>
-        <div class="project-section"><strong>📌 Problem:</strong> A commercial chatbot powered by LLM had high latency (>3s per query) and could not handle peak traffic cost-effectively.</div>
-        <div class="project-section"><strong>📁 Data:</strong> 200k real anonymized customer queries (e-commerce returns, product info).</div>
-        <div class="project-section"><strong>⚙️ Approach:</strong> Implemented speculative decoding and dynamic batch inference; pruned less important attention heads using SparseGPT.</div>
-        <div class="project-section"><strong>📈 Outcome:</strong> Reduced average latency to 0.9s and cut GPU cost by 55% while maintaining 97% response quality.</div>
-        <div class="project-section"><strong>🙋 Contribution:</strong> Designed speculative decoding algorithm and led integration into production prototype; co-authored technical report.</div>
-        <div><a href="#" class="btn">🔗 Demo</a> <a href="#" class="btn">📄 Project Report</a></div>
+        <div class="project-title">💳 Credit Card Fraud Detection (Imbalanced Classification)</div>
+        <div class="project-date">Jan 2026 – Mar 2026 | Group Project (6 members)</div>
+        <div class="project-section"><strong>📌 Problem:</strong> Identify fraudulent transactions from highly imbalanced credit card data (fraud rate only 0.17%) to minimize financial loss and false positives.</div>
+        <div class="project-section"><strong>📁 Data:</strong> Kaggle MLG‑ULB dataset (284,807 transactions, 30 anonymized PCA features + Time & Amount). 80/20 stratified split.</div>
+        <div class="project-section"><strong>⚙️ Approach:</strong> Preprocessing: scaling (Time, Amount) + SMOTE on training set only. Models: Logistic Regression vs. Random Forest (class_weight='balanced'). Evaluation: ROC‑AUC, AUPRC, precision/recall/F1.</div>
+        <div class="project-section"><strong>📈 Outcome:</strong> Random Forest achieved precision 0.911, recall 0.758, F1 0.828, AUPRC 0.812 – far superior to Logistic Regression. Showed that ROC‑AUC can be misleading under extreme imbalance.</div>
+        <div class="project-section"><strong>🙋 Contribution:</strong> Organized the entire codebase, compiled performance metrics and figures, uploaded all materials to GitHub, and prepared the repository README documentation.</div>
+        <div><a href="https://github.com/houshuwei/Group-Assignment-Insight-Syndicate" class="btn" target="_blank">🔗 GitHub Repo</a> <a href="#" class="btn">📄 Report (PDF)</a></div>
     </div>
-
+    
     <!-- 5) Resume / CV -->
     <h2>📄 Resume</h2>
     <p>Download my CV (PDF) or view an online version:</p>
